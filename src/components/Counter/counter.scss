@@ -1,0 +1,174 @@
+.counter {
+    position: relative;
+    text-align: center;
+    border-radius: 50%;
+
+    &:after {
+        position: absolute;
+        content: "";
+        background-color: #fff;
+        border-radius: 50%;
+    }
+}
+
+.counterIndicator {
+    position: relative;
+    z-index: 5;
+}
+
+// Общие стили для primary и secondary
+.primary-counter {
+    background-color: #2FB675;
+    color: #fff;
+}
+
+.secondary-counter {
+    background-color: #8366561F;
+    color: #2E2F33;
+}
+
+// Стили для размеров и обводки
+.size-8-counter {
+    width: 8px;
+    height: 8px;
+
+    &.pulse-counter .counterIndicator {
+        height: 8px;
+        width: 8px;
+    }
+    &.pulse-counter .pulseAnimation {
+        height: 8px;
+        width: 8px;
+    }
+
+    .counter::after {
+        top: -1px;
+        right: -1px;
+        left: -1px;
+        bottom: -1px;
+    }
+}
+
+.size-12-counter{
+    width: 12px;
+    height: 12px;
+
+    &.pulse-counter .counterIndicator {
+        height: 12px;
+        width: 12px;
+    }
+    &.pulse-counter .pulseAnimation {
+        height: 12px;
+        width: 12px;
+    }
+
+    &.counter::after {
+        top: -2px;
+        right: -2px;
+        left: -2px;
+        bottom: -2px;
+    }
+}
+
+.size-16-counter {
+    .counterIndicator {
+        min-height: 16px;
+        min-width: 16px;
+        padding: 0 4px;
+        font-size: 11px;
+        border-radius: 50%;
+    }
+
+    &.single-character {
+        width: 16px;
+        height: 16px;
+    }
+
+    &.counter::after {
+        top: -2px;
+        right: -2px;
+        left: -2px;
+        bottom: -2px;
+    }
+}
+
+.size-20-counter {
+    .counterIndicator {
+        min-height: 20px;
+        min-height: 20px;
+        padding: 0 4px;
+        font-size: 13px;
+    }
+
+    &.single-character {
+        width: 20px;
+        height: 20px;
+    }
+
+    &.counter::after {
+        top: -2px;
+        right: -2px;
+        left: -2px;
+        bottom: -2px;
+    }
+}
+
+.size-24-counter {
+    .counterIndicator {
+        min-height: 24px;
+        min-height: 24px;
+        padding: 0 6px;
+        font-size: 15px;
+    }
+
+    &.single-character {
+        width: 24px;
+        height: 24px;
+    }
+
+    &.counter::after {
+        top: -3px;
+        right: -3px;
+        left: -3px;
+        bottom: -3px;
+    }
+}
+  
+.counter.pulse-counter .counterIndicator, .counter.pulse-counter .pulseAnimation {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.counter.pulse-counter.primary-counter .counterIndicator, .counter.pulse-counter.primary-counter .pulseAnimation {
+    background-color: #2FB675;
+}
+
+.counter.pulse-counter.secondary-counter .counterIndicator, .counter.pulse-counter.secondary-counter .pulseAnimation {
+    background-color: #8366561F;
+}
+  
+.counter.pulse-counter .pulseAnimation {
+    animation-name: pulseAnimation;
+    animation-iteration-count: infinite; 
+    animation-duration: 2s;
+}
+  
+.counter.pulse-counter .pulseAnimation.two {
+    animation-delay: 0.25s;
+}
+  
+@keyframes pulseAnimation {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(3);
+    }
+    
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}

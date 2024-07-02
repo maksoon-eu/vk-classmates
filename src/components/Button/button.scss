@@ -114,9 +114,12 @@
 // Стили для размеров и обводки
 .size-28-button {
     padding: 6px 10px;
-    gap: 4px;
     font-size: 13px;
     line-height: 16px;
+
+    .buttonLabel {
+        gap: 4px;
+    }
 
     & .progressIndicator {
         width: 16px;
@@ -126,9 +129,12 @@
 
 .size-36-button {
     padding: 8px 12px;
-    gap: 6px;
     font-size: 15px;
     line-height: 20px;
+
+    .buttonLabel {
+        gap: 6px;
+    }
 
     & .progressIndicator {
         width: 20px;
@@ -141,6 +147,10 @@
     gap: 8px;
     font-size: 17px;
     line-height: 24px;
+
+    .buttonLabel {
+        gap: 8px;
+    }
 
     & .progressIndicator {
         width: 24px;

@@ -27,7 +27,7 @@ const Counter: React.FC<CounterProps> = ({ style = 'primary', size = 8, stroke =
 
     return (
         <div className={counterClass} data-testid="counter">
-            <div className={`counterIndicator ${style}-counter size-${size}-counter`}>
+            <div className={`counterIndicator ${style}-counter size-${size}-counter ${isSingleCharacter ? 'single-character' : ''}`}>
                 {shouldDisplayText && quantityText}
             </div>
             {pulseActive && 

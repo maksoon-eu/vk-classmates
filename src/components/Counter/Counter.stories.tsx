@@ -39,7 +39,7 @@ Primary.args = {
   style: 'primary',
   size: 16,
   stroke: true,
-  quantity: '5',
+  quantity: '1',
   pulse: true,
 };
 
@@ -76,5 +76,5 @@ WithoutStroke.args = {
   size: 16,
   stroke: false,
   quantity: '25',
-  pulse: true,
+  pulse: false,
 };

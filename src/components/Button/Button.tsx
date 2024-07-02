@@ -44,7 +44,7 @@ const Button: React.FC<ButtonProps> = ({ style = 'primary', size = 36, state = "
                 </div>
                 {counter && <Counter style={'secondary'} size={16} quantity={"1"} stroke/>}
             </div>
-            {loading && <ProgressIndicator />}
+            {(loading || state === 'loading') && <ProgressIndicator />}
         </div>
     );
 };

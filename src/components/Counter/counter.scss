@@ -1,14 +1,15 @@
 .counter {
     position: relative;
     text-align: center;
-    border-radius: 50%;
+    display: inline-block;
+    border-radius: 15%;
+}
 
-    &:after {
-        position: absolute;
-        content: "";
-        background-color: #fff;
-        border-radius: 50%;
-    }
+.stroke-counter.counter:after {
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    border-radius: 15%;
 }
 
 .counterIndicator {
@@ -18,19 +19,20 @@
 
 // Общие стили для primary и secondary
 .primary-counter {
-    background-color: #2FB675;
+    background-color: #2fb675;
     color: #fff;
 }
 
 .secondary-counter {
-    background-color: #8366561F;
-    color: #2E2F33;
+    background-color: #8366561f;
+    color: #2e2f33;
 }
 
 // Стили для размеров и обводки
 .size-8-counter {
     width: 8px;
     height: 8px;
+    border-radius: 50%;
 
     &.pulse-counter .counterIndicator {
         height: 8px;
@@ -49,9 +51,10 @@
     }
 }
 
-.size-12-counter{
+.size-12-counter {
     width: 12px;
     height: 12px;
+    border-radius: 50%;
 
     &.pulse-counter .counterIndicator {
         height: 12px;
@@ -76,12 +79,8 @@
         min-width: 16px;
         padding: 0 4px;
         font-size: 11px;
-        border-radius: 50%;
-    }
-
-    &.single-character {
-        width: 16px;
-        height: 16px;
+        line-height: 16px;
+        border-radius: 15%;
     }
 
     &.counter::after {
@@ -89,20 +88,23 @@
         right: -2px;
         left: -2px;
         bottom: -2px;
+    }
+
+    &.single-character {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
     }
 }
 
 .size-20-counter {
     .counterIndicator {
         min-height: 20px;
-        min-height: 20px;
+        min-width: 20px;
         padding: 0 4px;
         font-size: 13px;
-    }
-
-    &.single-character {
-        width: 20px;
-        height: 20px;
+        line-height: 20px;
+        border-radius: 15%;
     }
 
     &.counter::after {
@@ -111,19 +113,22 @@
         left: -2px;
         bottom: -2px;
     }
+
+    &.single-character {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
 }
 
 .size-24-counter {
     .counterIndicator {
         min-height: 24px;
-        min-height: 24px;
+        min-width: 24px;
         padding: 0 6px;
         font-size: 15px;
-    }
-
-    &.single-character {
-        width: 24px;
-        height: 24px;
+        line-height: 24px;
+        border-radius: 15%;
     }
 
     &.counter::after {
@@ -132,31 +137,44 @@
         left: -3px;
         bottom: -3px;
     }
+
+    &.single-character {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
 }
-  
-.counter.pulse-counter .counterIndicator, .counter.pulse-counter .pulseAnimation {
+
+.single-character.counter::after {
+    border-radius: 50%;
+}
+
+.counter.pulse-counter .counterIndicator,
+.counter.pulse-counter .pulseAnimation {
     position: absolute;
     border-radius: 50%;
 }
 
-.counter.pulse-counter.primary-counter .counterIndicator, .counter.pulse-counter.primary-counter .pulseAnimation {
-    background-color: #2FB675;
+.counter.pulse-counter.primary-counter .counterIndicator,
+.counter.pulse-counter.primary-counter .pulseAnimation {
+    background-color: #2fb675;
 }
 
-.counter.pulse-counter.secondary-counter .counterIndicator, .counter.pulse-counter.secondary-counter .pulseAnimation {
-    background-color: #8366561F;
+.counter.pulse-counter.secondary-counter .counterIndicator,
+.counter.pulse-counter.secondary-counter .pulseAnimation {
+    background-color: #8366561f;
 }
-  
+
 .counter.pulse-counter .pulseAnimation {
     animation-name: pulseAnimation;
-    animation-iteration-count: infinite; 
+    animation-iteration-count: infinite;
     animation-duration: 2s;
 }
-  
+
 .counter.pulse-counter .pulseAnimation.two {
     animation-delay: 0.25s;
 }
-  
+
 @keyframes pulseAnimation {
     0% {
         opacity: 0.5;
@@ -166,7 +184,7 @@
         opacity: 0;
         transform: scale(3);
     }
-    
+
     100% {
         opacity: 0;
         transform: scale(3);
